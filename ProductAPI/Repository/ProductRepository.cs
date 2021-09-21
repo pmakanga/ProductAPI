@@ -36,7 +36,7 @@ namespace ProductAPI.IRepository
 
         public IEnumerable<Product> GetProducts()
         {
-            return dbContext.Products.Include(s => s.ProductSKUs).ToList();
+            return dbContext.Products.Include(s => s.ProductSKUs).Include(s => s.Category).ToList();
         }
 
         public void UpdateProduct(Product Product)
